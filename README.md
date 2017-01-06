@@ -30,3 +30,7 @@ Returns: a brightness float value (from min to max, which you can use to plug in
 ## Credits
 
 This application uses sunrise-sunset.org's API: http://sunrise-sunset.org/api
+
+http://stackoverflow.com/questions/1969240/mapping-a-range-of-values-to-another
+
+http://stackoverflow.com/questions/466345/converting-string-into-datetime
