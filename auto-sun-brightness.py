@@ -58,7 +58,7 @@ if args.day_end is not None:
 intensity = None
 
 # get the sunrise/sunset data
-url = 'http://api.sunrise-sunset.org/json?lat=' + str(lat) +
+url = 'https://api.sunrise-sunset.org/json?lat=' + str(lat) +
 "&lng=" + str(lng) + '&date=today&formatted=0'
 
 data = urllib.urlopen(url).read()
