@@ -1,5 +1,4 @@
-import urllib
-import urllib2
+import urllib.request
 import json
 import pytz
 from dateutil.parser import parse
@@ -27,10 +26,12 @@ solarEvents = ["sunrise", "solar_noon", "sunset", "civil_twilight_begin",
                "civil_twilight_end", "nautical_twilight_begin",
                "nautical_twilight_end", "astronomical_twilight_begin",
                "astronomical_twilight_end"]
+
 parser.add_argument('--day_start', type=str, nargs='?',
-                    const='sunrise', help='values: ' +
+                    const='sunrise', help='values: ' + \
                     ", ".join(solarEvents))
-parser.add_argument('--day_end', type=str, nargs='?'
+
+parser.add_argument('--day_end', type=str, nargs='?',
                     const='sunset', help='values: ' + ", ".join(solarEvents))
 
 args = parser.parse_args()
@@ -40,7 +41,7 @@ lowestIntensity = int(args.min)
 highestIntensity = int(args.max)
 
 if lowestIntensity >= highestIntensity:
-    print "Error: lowest intensity cannot be greater than highest intensity"
+    print("Error: lowest intensity cannot be greater than highest intensity")
     exit()
 
 lat = float(args.lat)
@@ -58,17 +59,17 @@ if args.day_end is not None:
 intensity = None
 
 # get the sunrise/sunset data
-url = 'https://api.sunrise-sunset.org/json?lat=' + str(lat) +
+url = 'https://api.sunrise-sunset.org/json?lat=' + str(lat) + \
 "&lng=" + str(lng) + '&date=today&formatted=0'
 
-data = urllib.urlopen(url).read()
-decodeJson = json.loads(data)
+data = urllib.request.urlopen(url).read()
+decodeJson = json.loads(data.decode('utf-8'))
 
 # parse it
-sunrise = parse(decodeJson['results'][turnOnLightsAfter])
+sunrise = parse(decodeJson['results'][turnOnLightsAfter]) \
 .replace(tzinfo=pytz.utc)
 
-sunset = parse(decodeJson['results'][dimLightsBefore])
+sunset = parse(decodeJson['results'][dimLightsBefore]) \
 .replace(tzinfo=pytz.utc)
 
 currTime = datetime.utcnow().replace(tzinfo=pytz.utc)
@@ -85,4 +86,4 @@ else:
     intensity = interp(timeFromSunrise, [0, secondsSunIsUp / 2],
                                         [lowestIntensity, highestIntensity])
 
-print intensity
+print(intensity)
