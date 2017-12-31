@@ -1,5 +1,7 @@
 # auto-sun-brightness
-Get a numeric representation of how bright the sun is at any point in the day, anywhere
+Get a numeric representation of how bright the sun is at any point in the day, anywhere.
+
+[![Updates](https://pyup.io/repos/github/Decagon/auto-sun-brightness/shield.svg)](https://pyup.io/repos/github/Decagon/auto-sun-brightness/) [![Python 3](https://pyup.io/repos/github/Decagon/auto-sun-brightness/python-3-shield.svg)](https://pyup.io/repos/github/Decagon/auto-sun-brightness/)
 
 ```bash
 usage: brightness.py [-h] --lat LAT --long LONG --max MAX --min MIN
