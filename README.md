@@ -1,7 +1,7 @@
 # auto-sun-brightness
 Get a numeric representation of how bright the sun is at any point in the day, anywhere.
 
-[![Updates](https://pyup.io/repos/github/Decagon/auto-sun-brightness/shield.svg)](https://pyup.io/repos/github/Decagon/auto-sun-brightness/) [![Python 3](https://pyup.io/repos/github/Decagon/auto-sun-brightness/python-3-shield.svg)](https://pyup.io/repos/github/Decagon/auto-sun-brightness/)
+[![Updates](https://pyup.io/repos/github/alexyorke/auto-sun-brightness/shield.svg)](https://pyup.io/repos/github/alexyorke/auto-sun-brightness/) [![Python 3](https://pyup.io/repos/github/alexyorke/auto-sun-brightness/python-3-shield.svg)](https://pyup.io/repos/github/alexyorke/auto-sun-brightness/)
 
 ```bash
 usage: brightness.py [-h] --lat LAT --long LONG --max MAX --min MIN
@@ -28,6 +28,9 @@ Example: `python auto-sun-brightness.py --lat -10.15550 --long 75.67612 --max 10
 
 Returns: a brightness float value (from min to max, which you can use to plug into your IoT lights for example.)
 
+## Getting started
+
+First, run `pip install -r requirements.txt`, then start the program as shown in the example.
 
 ## Credits
 
